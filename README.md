@@ -3,6 +3,14 @@
 
 > **Google Solution Challenge 2026 · Problem 5: Smart Resource Allocation**
 
+## 🚀 Live Deployments
+
+| Platform | URL | Status |
+|---|---|---|
+| **Google Cloud Run** | [neev-platform-613146682867.asia-south1.run.app](https://neev-platform-613146682867.asia-south1.run.app) | ✅ Live |
+| **Vercel** | [neev-platform.vercel.app](https://neev-platform.vercel.app) | ✅ Live |
+| **GitHub** | [Smart123-12/neev-platform](https://github.com/Smart123-12/neev-platform) | ✅ Public |
+
 NEEV (meaning "foundation" in Hindi) is an AI-powered platform that intelligently matches NGO community needs with skilled volunteers across Indian cities, using **Gemini 1.5 Flash**, **Firebase**, and **Google Maps**.
 
 ---
