@@ -1,0 +1,307 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── NEEV Color Tokens ─────────────────────── */
+:root {
+  --neev-navy:  #0d1f35;
+  --neev-gold:  #c9a84c;
+  --neev-cream: #f7f3ec;
+  --neev-slate: #3d5166;
+  --neev-mist:  #e8edf5;
+  --neev-ink:   #1a2d42;
+}
+
+/* ─── Global Reset & Defaults ───────────────── */
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: 'DM Sans', sans-serif;
+  background-color: var(--neev-cream);
+  color: var(--neev-ink);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ─── Typography ────────────────────────────── */
+h1, h2, h3, h4, h5 {
+  font-family: 'Playfair Display', serif;
+}
+
+/* ─── Scrollbar (subtle) ────────────────────── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--neev-cream); }
+::-webkit-scrollbar-thumb { background: var(--neev-gold); border-radius: 3px; }
+
+/* ─── Focus Ring ────────────────────────────── */
+input:focus, textarea:focus, select:focus, button:focus-visible {
+  outline: 2px solid var(--neev-gold);
+  outline-offset: 2px;
+}
+
+/* ─── NEEV Card ─────────────────────────────── */
+.neev-card {
+  background: #fff;
+  border-left: 3px solid var(--neev-gold);
+  border-radius: 10px;
+  box-shadow: 0 1px 4px rgba(13, 31, 53, 0.08);
+  padding: 1.25rem 1.5rem;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+.neev-card:hover {
+  box-shadow: 0 4px 16px rgba(13, 31, 53, 0.13);
+  transform: translateY(-1px);
+}
+
+/* ─── Primary Button ────────────────────────── */
+.btn-primary {
+  background: var(--neev-navy);
+  color: var(--neev-gold);
+  border: none;
+  border-radius: 6px;
+  padding: 0.55rem 1.25rem;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 600;
+  font-size: 0.875rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: opacity 0.15s, transform 0.15s;
+}
+.btn-primary:hover { opacity: 0.88; transform: translateY(-1px); }
+.btn-primary:active { transform: translateY(0); }
+
+/* ─── Outline Button ────────────────────────── */
+.btn-outline {
+  background: transparent;
+  color: var(--neev-navy);
+  border: 1px solid var(--neev-navy);
+  border-radius: 6px;
+  padding: 0.55rem 1.25rem;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 600;
+  font-size: 0.875rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: background 0.15s, color 0.15s;
+}
+.btn-outline:hover {
+  background: var(--neev-navy);
+  color: var(--neev-gold);
+}
+
+/* ─── Gold outline button for light bg ─────── */
+.btn-gold-outline {
+  background: transparent;
+  color: var(--neev-gold);
+  border: 1px solid var(--neev-gold);
+  border-radius: 6px;
+  padding: 0.55rem 1.25rem;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 600;
+  font-size: 0.875rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: background 0.15s, color 0.15s;
+}
+.btn-gold-outline:hover {
+  background: var(--neev-gold);
+  color: var(--neev-navy);
+}
+
+/* ─── Urgency Badges ────────────────────────── */
+.badge-high {
+  background: #0d1f35;
+  color: #c9a84c;
+  padding: 2px 10px;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  font-family: 'DM Sans', sans-serif;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.badge-medium {
+  background: #f0e9d8;
+  color: #8a6a1e;
+  padding: 2px 10px;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  font-family: 'DM Sans', sans-serif;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.badge-low {
+  background: #e8edf5;
+  color: #2a4a6b;
+  padding: 2px 10px;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  font-family: 'DM Sans', sans-serif;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+/* ─── Skill Pill ────────────────────────────── */
+.skill-pill {
+  background: var(--neev-navy);
+  color: var(--neev-gold);
+  padding: 2px 12px;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* ─── Match Score Chip ──────────────────────── */
+.match-chip {
+  background: var(--neev-gold);
+  color: var(--neev-navy);
+  padding: 3px 12px;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  font-family: 'DM Sans', sans-serif;
+}
+
+/* ─── Shimmer Skeleton ──────────────────────── */
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--neev-cream) 25%,
+    rgba(201, 168, 76, 0.18) 50%,
+    var(--neev-cream) 75%
+  );
+  background-size: 1000px 100%;
+  animation: shimmer 2s infinite linear;
+  border-radius: 6px;
+}
+
+/* ─── Page Fade-In ──────────────────────────── */
+.page-enter {
+  animation: fadeIn 0.2s ease-out forwards;
+}
+
+/* ─── Form Input ────────────────────────────── */
+.neev-input {
+  width: 100%;
+  border: 1px solid #d0d9e8;
+  border-radius: 6px;
+  padding: 0.55rem 0.875rem;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.9rem;
+  color: var(--neev-ink);
+  background: #fff;
+  transition: border-color 0.15s;
+}
+.neev-input:focus {
+  border-color: var(--neev-gold);
+  outline: 2px solid var(--neev-gold);
+  outline-offset: 1px;
+}
+.neev-input::placeholder { color: #9ab0c8; }
+
+/* ─── Select ────────────────────────────────── */
+.neev-select {
+  width: 100%;
+  border: 1px solid #d0d9e8;
+  border-radius: 6px;
+  padding: 0.55rem 0.875rem;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.9rem;
+  color: var(--neev-ink);
+  background: #fff;
+  cursor: pointer;
+}
+.neev-select:focus {
+  border-color: var(--neev-gold);
+  outline: 2px solid var(--neev-gold);
+  outline-offset: 1px;
+}
+
+/* ─── Slide Panel Overlay ───────────────────── */
+.panel-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(13, 31, 53, 0.38);
+  z-index: 40;
+  animation: fadeIn 0.2s ease-out forwards;
+}
+.slide-panel {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 100%;
+  max-width: 480px;
+  background: #fff;
+  z-index: 50;
+  overflow-y: auto;
+  animation: slideIn 0.3s ease-out forwards;
+  box-shadow: -8px 0 40px rgba(13, 31, 53, 0.18);
+}
+
+/* ─── Demo Banner ───────────────────────────── */
+.demo-banner {
+  background: var(--neev-gold);
+  color: var(--neev-navy);
+  text-align: center;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 600;
+  font-size: 0.82rem;
+  padding: 6px 16px;
+  letter-spacing: 0.04em;
+}
+
+/* ─── Toast ─────────────────────────────────── */
+.toast-container {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.toast {
+  background: var(--neev-navy);
+  color: var(--neev-gold);
+  padding: 0.7rem 1.4rem;
+  border-radius: 8px;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 500;
+  font-size: 0.875rem;
+  box-shadow: 0 4px 24px rgba(13, 31, 53, 0.22);
+  animation: toastIn 0.3s ease-out forwards;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-width: 260px;
+  max-width: 360px;
+}
+
+/* ─── Metric Card ───────────────────────────── */
+.metric-card {
+  background: var(--neev-cream);
+  border-radius: 10px;
+  padding: 1.25rem 1.5rem;
+  border: 1px solid rgba(201, 168, 76, 0.22);
+  box-shadow: 0 1px 4px rgba(13, 31, 53, 0.06);
+}
+
+/* ─── Responsive ────────────────────────────── */
+@media (max-width: 768px) {
+  .slide-panel { max-width: 100%; }
+}
