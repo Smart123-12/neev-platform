@@ -17,7 +17,8 @@ export default async function handler(req, res) {
   if (typeof req.body === 'string') {
     try {
       body = JSON.parse(req.body);
-    } catch {
+    } catch (error) {
+      console.error('Invalid JSON body:', error);
       return res.status(400).json({ error: 'Invalid JSON body' });
     }
   }
@@ -27,9 +28,12 @@ export default async function handler(req, res) {
   }
 
   try {
-    const geminiRes = await fetch(`${GEMINI_ENDPOINT}?key=${apiKey}`, {
+    const geminiRes = await fetch(GEMINI_ENDPOINT, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: {
+        'Content-Type': 'application/json',
+        'x-goog-api-key': apiKey,
+      },
       body: JSON.stringify({
         contents: [{ parts: [{ text: prompt }] }],
         generationConfig: {
