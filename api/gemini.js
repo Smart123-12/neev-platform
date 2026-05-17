@@ -16,7 +16,7 @@ export default async function handler(req, res) {
   let body = req.body || {};
   if (typeof req.body === 'string') {
     try {
-      body = JSON.parse(req.body || '{}');
+      body = JSON.parse(req.body);
     } catch {
       return res.status(400).json({ error: 'Invalid JSON body' });
     }
@@ -41,7 +41,8 @@ export default async function handler(req, res) {
 
     if (!geminiRes.ok) {
       const errText = await geminiRes.text();
-      return res.status(geminiRes.status).json({ error: errText });
+      console.error('Gemini upstream error:', geminiRes.status, errText);
+      return res.status(geminiRes.status).json({ error: 'Gemini request failed' });
     }
 
     const data = await geminiRes.json();
