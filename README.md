@@ -47,7 +47,6 @@ Click **"I represent an NGO"** or **"I want to volunteer"** to explore.
 Copy `.env.example` → `.env` and fill in your keys:
 
 ```env
-VITE_GEMINI_API_KEY=          # From Google AI Studio (free tier)
 VITE_FIREBASE_API_KEY=        # From Firebase Console
 VITE_FIREBASE_AUTH_DOMAIN=
 VITE_FIREBASE_PROJECT_ID=
@@ -55,6 +54,12 @@ VITE_FIREBASE_STORAGE_BUCKET=
 VITE_FIREBASE_MESSAGING_SENDER_ID=
 VITE_FIREBASE_APP_ID=
 VITE_GOOGLE_MAPS_API_KEY=     # Enable Maps JavaScript API
+```
+
+Set this server-side (not in Vite client env):
+
+```env
+GEMINI_API_KEY=               # From Google AI Studio (kept private on server)
 ```
 
 ### Getting API Keys
